@@ -6,13 +6,11 @@ new Vue({
   },
   methods: {
     punch() {
-      // if (this.health <= 0) {
-      //   this.ended = true;
-      // } else {
-      //   this.health -= 10;
-      // }
+      this.health -= 10;
 
-      this.health <= 0 ? (this.ended = true) : (this.health -= 10);
+      if (this.health < 10) {
+        this.ended = true;
+      }
     },
     restart() {
       this.health = 100;
